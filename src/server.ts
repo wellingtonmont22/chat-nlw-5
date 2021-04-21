@@ -1,4 +1,5 @@
 import express from "express";
+import "./database"
 
 const app = express();
 
@@ -7,7 +8,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    return res.json({message: "Usuário salvo!"})
+    return res.json({ message: "Usuário salvo!" })
 });
 
 app.listen(3000, () => console.log("Rodando... na porta 3000"));
