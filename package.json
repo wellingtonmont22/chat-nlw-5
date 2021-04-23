@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
+    "mrun" : "yarn typeorm migration:run"
   },
   "dependencies": {
     "express": "^4.17.1",
