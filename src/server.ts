@@ -7,11 +7,15 @@ import { routes } from "./routes"
 
 const app = express();
 
-const http = createServer(app);//Criando Protocolo http
-const io = new Server(http);//Criando Protocolo ws
+const http = createServer(app);//Criando Servidor - Protocolo http
+const io = new Server(http);//Criando Servidor - Protocolo ws
+
+io.on("connection", (socket: Socket) => {
+    console.log("Se conectou", socket.id);
+});
 
 app.use(express.json());
 
 app.use(routes)
 
-app.listen(3000, () => console.log("Rodando... na porta 3000"));
+http.listen(3000, () => console.log("Rodando... na porta 3000"));
