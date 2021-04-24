@@ -28,4 +28,11 @@ export class ConnectionsService{
 
         return connection;
     }
+    async findByUserId(user_id: string){
+        const connection = await this.connectionsRepository.findOne({
+            user_id
+        });
+        return connection;
+    }
+    
 }
