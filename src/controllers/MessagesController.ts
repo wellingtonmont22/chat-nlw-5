@@ -1,11 +1,11 @@
 import {Request, Response} from "express";
-import { MessegesService } from "../services/MessagesService";
+import { MessagesService } from "../services/MessagesService";
 
 export class MessagesController{
     async create(req: Request, res: Response){
         const { admin_id, text, user_id } = req.body;
 
-        const messagesService = new MessegesService;
+        const messagesService = new MessagesService;
 
         const message = await messagesService.create({
             admin_id,
@@ -19,7 +19,7 @@ export class MessagesController{
     async showByUser(req: Request, res: Response){
         const { id } = req.params
 
-        const messagesService = new MessegesService;
+        const messagesService = new MessagesService;
 
         const list = await messagesService.listByUser(id);
 

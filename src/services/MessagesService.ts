@@ -8,7 +8,7 @@ interface IMessageCreate{
     user_id: string
 }
 
-export class MessegesService{
+export class MessagesService{
 
     private messagesRepository: Repository<Message>
 
